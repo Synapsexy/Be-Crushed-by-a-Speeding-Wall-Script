@@ -286,6 +286,15 @@ sec4:Button("Flying Reindeer", function()
     game:GetService('Players').LocalPlayer.Character:FindFirstChild("HumanoidRootPart").CFrame = oldcf
  end)
 
+ sec7:Button("ReExecute Script", function()
+    for i,v in pairs(game:GetService('CoreGui'):GetChildren()) do
+        if v:FindFirstChild("NotificationHolder")  or v:FindFirstChild("MainFrameHolder") or v:FindFirstChild("MusicFrameHolder") then
+            v:Destroy()
+        end
+    end
+    loadstring(game:HttpGet("https://raw.githubusercontent.com/Synapsexy/Be-Crushed-by-a-Speeding-Wall-Script/main/Script.lua", true))()
+ end)
+
  local toggle = sec7:Toggle("Light", false,"Light", function(v)
     getgenv().LGH = v
 
